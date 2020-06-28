@@ -2,7 +2,7 @@ const {task,src,dest,watch,series,parallel} = require('gulp');
 const load = require('gulp-load-plugins')();
 const del = require('del');
 
-// 删除dist目录的内容
+// 删除dist目录
 task('del',async ()=>{
     await del('./dist');
 })
@@ -46,6 +46,7 @@ task('connect',async ()=>{
     });
 })
 
+// 监听文件变化
 task('watch',async ()=>{
     watch('./src/html/*.html',series('html'));
     watch('./src/imgs/*.*',series('img'));

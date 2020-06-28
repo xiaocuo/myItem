@@ -53,7 +53,7 @@ async function html(){
     })
 }
 
-// 构建生成环境的代码
+// 构建生产环境的代码
 task('build',async ()=>{
     await delDist();
     await img();
